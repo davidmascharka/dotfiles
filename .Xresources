@@ -1,0 +1,38 @@
+! let there be colors
+xterm*termName: xterm-256color
+! dark background
+xterm*background: gray10
+! with a light-ish font
+xterm*foreground: dark gray
+! use UTF-8 encoding
+xterm*locale: true
+! give me more lines saved
+xterm*saveLines: 4096
+! use the clipboard instead of a kill buffer
+xterm*selectToClipboard: true
+! use a nice font
+xterm*faceName: DejaVu Sans Mono:style=Book:antialias=False
+! make the font readable
+xterm*faceSize: 12
+! make the meta key work
+xterm*eightBitInput: false
+xterm*eightBitOutput: true
+! have no border
+xterm*borderWidth: 0
+
+! make emacs work nicely to get C-h as not backspace
+xterm*metaSendsEscape: true
+xterm*ttyModes: erase ^?
+xterm*VT100*translations: #override \
+    <Key> Backspace: string(0x7f)
+xterm*backarrowKeyIsErase: true
+
+! this is the option by default but just in case -- blinking is annoying
+xterm*cursorBlink: false
+
+! give normal copy/paste from system
+xterm*vt100*translations: #override                                     \
+    Shift Ctrl <KeyPress> C: copy-selection(CLIPBOARD)          \n      \
+    Shift Ctrl <KeyPress> V: insert-selection(CLIPBOARD)        \n      \
+    Shift Ctrl <KeyPress> N: spawn-new-terminal()                       \
+
