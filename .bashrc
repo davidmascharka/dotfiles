@@ -29,5 +29,3 @@ alias grep='grep --color'
 
 # easily and nicely open files
 alias open='xdg-open'
-
-export PATH=/home/david/.gem/ruby/2.4.0/bin:$PATH
