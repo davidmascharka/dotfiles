@@ -71,10 +71,14 @@
 ;;                          PACKAGE SPECIFICS
 ;; ===========================================================================
 ;; Emacs theme
-(use-package ample-theme
+;; (use-package ample-theme
+;;   :ensure t
+;;   :config
+;;   (load-theme 'ample t))
+(use-package kaolin-themes
   :ensure t
   :config
-  (load-theme 'ample t))
+  (load-theme 'kaolin-dark t))
 
 ;; Ibuffer-vc
 ;; ---------------------------------------------------------------------------
@@ -108,7 +112,7 @@
 (use-package fill-column-indicator
   :ensure t
   :init
-  (setq-default fill-column 80)
+  (setq-default fill-column 100)
   (setq-default fci-rule-color "gray")
   (add-hook 'prog-mode-hook 'fci-mode))
 

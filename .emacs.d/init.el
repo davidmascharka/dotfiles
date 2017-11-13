@@ -43,3 +43,20 @@
 (load (concat dot-d-dir "config/cpp_settings.el"))
 (load (concat dot-d-dir "config/python_settings.el"))
 (load (concat dot-d-dir "config/org_settings.el"))
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(custom-safe-themes
+   (quote
+    ("649ca960922e2176a451db44624bc4dbcd282bc1660d2621793145232f688836" default)))
+ '(package-selected-packages
+   (quote
+    (yaml-mode kaolin-themes kaolin-theme use-package org-bullets markdown-mode magit ibuffer-vc flycheck fill-column-indicator counsel-projectile company auto-compile ample-theme))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
