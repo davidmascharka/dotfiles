@@ -143,7 +143,7 @@
 (use-package fill-column-indicator
   :ensure t
   :init
-  (setq-default fill-column 93)
+  (setq-default fill-column 100)
   (setq-default fci-rule-color "gray")
   (add-hook 'prog-mode-hook 'fci-mode))
 
