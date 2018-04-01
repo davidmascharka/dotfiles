@@ -4,8 +4,31 @@
 
 ;; Stop that noob shit at startup
 (setq inhibit-startup-message t)
+
 (menu-bar-mode -1)
 (tool-bar-mode -1)
+(scroll-bar-mode -1)
+
+(use-package perl6-mode
+  :ensure t
+  :defer t)
+
+(use-package highlight-numbers
+  :ensure t
+  :init
+  (add-hook 'prog-mode-hook 'highlight-numbers-mode))
+
+(use-package rainbow-delimiters
+  :ensure t
+  :init
+  (rainbow-delimiters-mode))
+
+(dolist (k '([mouse-1] [down-mouse-1] [drag-mouse-1] [double-mouse-1] [triple-mouse-1]  
+             [mouse-2] [down-mouse-2] [drag-mouse-2] [double-mouse-2] [triple-mouse-2]
+             [mouse-3] [down-mouse-3] [drag-mouse-3] [double-mouse-3] [triple-mouse-3]
+             [mouse-4] [down-mouse-4] [drag-mouse-4] [double-mouse-4] [triple-mouse-4]
+             [mouse-5] [down-mouse-5] [drag-mouse-5] [double-mouse-5] [triple-mouse-5]))
+  (global-unset-key k))
 
 ;; Keep backup(~) files in specified folder
 (setq backup-directory-alist `((".*" . ,emacs-backup-dir)))
@@ -48,6 +71,8 @@
        (lambda () (not (eq (get-text-property (point) 'face)
        'font-lock-comment-face)))))
 
+(set-face-attribute 'default nil :height 120)
+
 ;; Prompt before closing emacs
 (defun ask-before-closing ()
   "Ask whether or not to close, and then close if y was pressed"
@@ -75,10 +100,16 @@
 ;;   :ensure t
 ;;   :config
 ;;   (load-theme 'ample t))
+
 (use-package kaolin-themes
   :ensure t
   :config
-  (load-theme 'kaolin-dark t))
+  (load-theme 'kaolin-aurora t))
+
+;; ein
+;; ---------------------------------------------------------------------------
+(use-package ein
+  :ensure t)
 
 ;; Ibuffer-vc
 ;; ---------------------------------------------------------------------------
@@ -112,7 +143,7 @@
 (use-package fill-column-indicator
   :ensure t
   :init
-  (setq-default fill-column 100)
+  (setq-default fill-column 93)
   (setq-default fci-rule-color "gray")
   (add-hook 'prog-mode-hook 'fci-mode))
 
