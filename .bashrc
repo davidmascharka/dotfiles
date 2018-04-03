@@ -8,8 +8,8 @@ purple=$(tput setaf 5) # 1-7 are red, green, yellow, blue, purple, cyan, white
 reset=$(tput sgr0) # \e[0m
 PS1='\[$purple\][\u@\h \w]\$ \[$reset\]'
 
-# swap capslock and control
-/usr/bin/setxkbmap -option "ctrl:swapcaps"
+# nobody uses capslock --- make caps and ctrl both ctrl
+/usr/bin/setxkbmap -option "ctrl:nocaps"
 
 # be super lazy starting emacs
 alias em='emacsclient -t -a ""'
