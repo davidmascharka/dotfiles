@@ -21,7 +21,7 @@
 (use-package rainbow-delimiters
   :ensure t
   :init
-  (rainbow-delimiters-mode))
+  (add-hook 'prog-mode-hook 'rainbow-delimiters-mode))
 
 (dolist (k '([mouse-1] [down-mouse-1] [drag-mouse-1] [double-mouse-1] [triple-mouse-1]  
              [mouse-2] [down-mouse-2] [drag-mouse-2] [double-mouse-2] [triple-mouse-2]
@@ -96,11 +96,6 @@
 ;;                          PACKAGE SPECIFICS
 ;; ===========================================================================
 ;; Emacs theme
-;; (use-package ample-theme
-;;   :ensure t
-;;   :config
-;;   (load-theme 'ample t))
-
 (use-package kaolin-themes
   :ensure t
   :config
