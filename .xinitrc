@@ -34,5 +34,9 @@ fi
 # hide the stupid, annoying cursor after 1 second of inactivity
 unclutter -idle 1 &
 
+# save our eyes
+redshift &
+
 # start the window manager
 exec i3
+
