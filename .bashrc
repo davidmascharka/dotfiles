@@ -14,7 +14,7 @@ PS1='\[$purple\][\u@\h \w]\$ \[$reset\]'
 # be super lazy starting emacs
 alias em='emacsclient -t -a ""'
 
-export EDITOR=em
+export EDITOR='emacs -nw'
 
 # get nice colors using ls
 alias ls='ls --color=auto'
