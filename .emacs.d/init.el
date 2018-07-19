@@ -39,10 +39,10 @@
 (setq load-prefer-newer t)
 
 ;; Load configurations
-(load (concat dot-d-dir "config/global_settings.el"))
-(load (concat dot-d-dir "config/cpp_settings.el"))
-(load (concat dot-d-dir "config/python_settings.el"))
-(load (concat dot-d-dir "config/org_settings.el"))
+(load (concat dot-d-dir "global_settings.el"))
+(load (concat dot-d-dir "cpp_settings.el"))
+(load (concat dot-d-dir "python_settings.el"))
+(load (concat dot-d-dir "org_settings.el"))
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
