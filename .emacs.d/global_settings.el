@@ -99,7 +99,7 @@
 (use-package kaolin-themes
   :ensure t
   :config
-  (load-theme 'kaolin-aurora))
+  (load-theme 'kaolin-fusion))
 
 ;; ein
 ;; ---------------------------------------------------------------------------
