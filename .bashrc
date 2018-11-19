@@ -25,7 +25,7 @@ alias sl='ls'
 alias s='ls'
 
 # convenient ls aliases
-alias la='la -a'
+alias la='ls -a'
 alias ll='ls -l'
 alias lh='ls -lh'
 alias lha='ls -lah'
