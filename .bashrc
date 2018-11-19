@@ -4,9 +4,9 @@
 # show username@hostname and the full path
 # the \[ \] pairs enclose non-printable characters so bash does not count them
 # toward a line width so wrapping is nice
-purple=$(tput setaf 5) # 1-7 are red, green, yellow, blue, purple, cyan, white
+color=$(tput setaf 5) # 1-7 are red, green, yellow, blue, purple, cyan, white
 reset=$(tput sgr0) # \e[0m
-PS1='\[$purple\][\u@\h \w]\$ \[$reset\]'
+PS1='\[$color\][\u@\h \w]\$ \[$reset\]'
 
 # nobody uses capslock --- make caps and ctrl both ctrl
 /usr/bin/setxkbmap -option "ctrl:nocaps"
@@ -24,8 +24,22 @@ alias l='ls'
 alias sl='ls'
 alias s='ls'
 
+# convenient ls aliases
+alias la='la -a'
+alias ll='ls -l'
+alias lh='ls -lh'
+alias lha='ls -lah'
+alias lah='ls -lah' 
+
 # get nice colors with grep
 alias grep='grep --color'
 
 # easily and nicely open files
 alias open='xdg-open'
+
+export PATH=/home/david/perl5/bin:$PATH
+export LD_LIBRARY_PATH=/home/david/perl5/lib:$LD_LIBRARY_PATH
+
+export PATH=/home/david/mkl/mkl/bin:$PATH
+export LD_LIBRARY_PATH=/home/david/mkl/mkl/lib/intel64:$LD_LIBRARY_PATH
+export LIBRARY_PATH=/home/david/mkl/mkl/include:$LIBRARY_PATH
