@@ -35,7 +35,7 @@ fi
 unclutter -idle 1 &
 
 # save our eyes
-redshift &
+redshift -l 41:-74 &
 
 # start the window manager
 exec i3
