@@ -11,8 +11,8 @@ PS1='\[$color\][\u@\h \w]\$ \[$reset\]'
 # nobody uses capslock --- make caps and ctrl both ctrl
 /usr/bin/setxkbmap -option "ctrl:nocaps"
 
-# be super lazy starting emacs
-alias em='emacsclient -t -a ""'
+# load private settings (machine-specific)
+source .private-config.sh
 
 export EDITOR='emacs -nw'
 
@@ -24,22 +24,15 @@ alias l='ls'
 alias sl='ls'
 alias s='ls'
 
-# convenient ls aliases
-alias la='ls -a'
 alias ll='ls -l'
+alias la='ls -a'
+alias lla='ls -la'
 alias lh='ls -lh'
+alias lah='ls -lah'
 alias lha='ls -lah'
-alias lah='ls -lah' 
 
 # get nice colors with grep
 alias grep='grep --color'
 
 # easily and nicely open files
 alias open='xdg-open'
-
-export PATH=/home/david/perl5/bin:$PATH
-export LD_LIBRARY_PATH=/home/david/perl5/lib:$LD_LIBRARY_PATH
-
-export PATH=/home/david/mkl/mkl/bin:$PATH
-export LD_LIBRARY_PATH=/home/david/mkl/mkl/lib/intel64:$LD_LIBRARY_PATH
-export LIBRARY_PATH=/home/david/mkl/mkl/include:$LIBRARY_PATH

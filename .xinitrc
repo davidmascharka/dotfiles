@@ -34,7 +34,7 @@ fi
 # hide the stupid, annoying cursor after 1 second of inactivity
 unclutter -idle 1 &
 
-# save our eyes
+# don't go fucking blind
 redshift -l 41:-74 &
 
 # start the window manager

@@ -11,7 +11,7 @@ xterm*saveLines: 4096
 ! use the clipboard instead of a kill buffer
 xterm*selectToClipboard: true
 ! use a nice font
-xterm*faceName: DejaVu Sans Mono:style=Book:antialias=False
+xterm*faceName: DejaVu Sans Mono:style=Book:antialias=True
 ! make the font readable
 xterm*faceSize: 12
 ! make the meta key work
@@ -36,3 +36,7 @@ xterm*vt100*translations: #override                                     \
     Shift Ctrl <KeyPress> V: insert-selection(CLIPBOARD)        \n      \
     Shift Ctrl <KeyPress> N: spawn-new-terminal()                       \
 
+
+xterm*vt100*scrollBar: false
+
+Xft.dpi: 100
