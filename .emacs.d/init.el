@@ -1,26 +1,22 @@
 ;; Set emacs directory
 (defconst dot-d-dir "~/.emacs.d/" ".emacs.d location")
 
-;; Machine-specific settings
-(load (concat dot-d-dir "private-settings.el"))
-
 ;; Package management
 (require 'package)
 (unless (assoc-default "melpa" package-archives)
   (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/")))
 
 ;; Check for network connectivity
-;;(defvar my-online-p nil)
-;;(unless (condition-case
-;;            nil (delete-process (make-network-process
-;;                                 :name "my-check-internet"
-;;                                 :host "elpa.gnu.org"
-;;                                 :service 80)) (error t))
-;;  (setq my-online-p t))
+(defvar my-online-p nil)
+(unless (condition-case
+           nil (delete-process (make-network-process
+                                :name "my-check-internet"
+                                :host "elpa.gnu.org"
+                                :service 80)) (error t))
+ (setq my-online-p t))
 
 (when my-online-p
   (package-refresh-contents))
-(package-refresh-contents)
 
 ;; Add packages to load
 (add-to-list 'load-path (concat dot-d-dir "packages"))
@@ -45,6 +41,10 @@
 (load (concat dot-d-dir "cpp_settings.el"))
 (load (concat dot-d-dir "python_settings.el"))
 (load (concat dot-d-dir "org_settings.el"))
+;; Machine-specific settings
+(if (file-exists-p (concat dot-d-dir "private-settings.el"))
+    (load (concat dot-d-dir "private-settings.el")))
+
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
