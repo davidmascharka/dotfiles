@@ -135,10 +135,15 @@
 ;;                          PACKAGE SPECIFICS
 ;; ===========================================================================
 ;; Emacs theme
-(use-package kaolin-themes
+(use-package doom-themes
   :ensure t
   :config
-  (load-theme 'kaolin-fusion))
+  (load-theme 'doom-one))
+
+(use-package hlinum
+  :ensure t
+  :init
+  (add-hook 'prog-mode-hook 'hlinum-activate))  
 
 ;; ein
 ;; ---------------------------------------------------------------------------
