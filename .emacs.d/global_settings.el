@@ -1,6 +1,6 @@
 ;; Hide those annoying backup files
-(defconst emacs-backup-dir "~/.emacs.backup/" "directory backup files")
-(defconst emacs-autosave-dir "~/.emacs.autosave/" "directory auto-save files")
+(defconst emacs-backup-dir "~/.emacs.backup/" "Directory backup files.")
+(defconst emacs-autosave-dir "~/.emacs.autosave/" "Directory auto-save files.")
 
 ;; Stop that noob shit at startup
 (setq inhibit-startup-message t)
@@ -14,25 +14,25 @@
   :ensure t
   :defer t)
 
+;;; Make numbers pop a bit more
 (use-package highlight-numbers
   :ensure t
   :init
   (add-hook 'prog-mode-hook 'highlight-numbers-mode))
 
+;;; Make nested ((((([[[[{}]]]]))))) look alright
 (use-package rainbow-delimiters
   :ensure t
   :init
   (add-hook 'prog-mode-hook 'rainbow-delimiters-mode))
 
-(dolist (k '([mouse-1] [down-mouse-1] [drag-mouse-1] [double-mouse-1] [triple-mouse-1]  
+;;; Stop the mouse from doing anything
+(dolist (k '([mouse-1] [down-mouse-1] [drag-mouse-1] [double-mouse-1] [triple-mouse-1]
              [mouse-2] [down-mouse-2] [drag-mouse-2] [double-mouse-2] [triple-mouse-2]
              [mouse-3] [down-mouse-3] [drag-mouse-3] [double-mouse-3] [triple-mouse-3]
              [mouse-4] [down-mouse-4] [drag-mouse-4] [double-mouse-4] [triple-mouse-4]
              [mouse-5] [down-mouse-5] [drag-mouse-5] [double-mouse-5] [triple-mouse-5]))
   (global-unset-key k))
-;; clicking shouldn't move the point
-(defun mouse-set-point nil)
-(fmakunbound 'mouse-set-point)
 
 ;; Keep backup(~) files in specified folder
 (setq backup-directory-alist `((".*" . ,emacs-backup-dir)))
@@ -47,39 +47,29 @@
 (setq select-enable-clipboard t)
 
 ;; Check if the font exists and set it
-;; (defvar my/font-type "Source Code Pro:antialiasing=True:hinting=True")
-;; (defvar my/font-type "Roboto Mono:antialiasing=True:hinting=True")
-(defvar my/font-type "Hack:antialiasing=True:hinting=True")
+(defvar my/font-type "Hack:style=Regular:antialiasing=True:hinting=True")
 (defun font-exists-p (font)
   "Check if FONT exists."
        (if (null (x-list-fonts font))
            nil
          t))
 
-(use-package highlight-numbers
-  :ensure t
-  :init
-  (add-hook 'prog-mode-hook 'highlight-numbers-mode))
-
-(use-package rainbow-delimiters
-  :ensure t
-  :init
-  (add-hook 'prog-mode-hook 'rainbow-delimiters-mode))
+(font-exists-p my/font-type)
 
 ;; Set font for standalone GUI emacs
 (if (display-graphic-p)
     (if (font-exists-p my/font-type)
         (set-face-attribute 'default nil :font my/font-type)))
-(set-face-attribute 'default nil :height 130)
+(set-face-attribute 'default nil :height 120)
 
 ;; Set font for generated frames (daemon)
 (defun my/set-frame-font (frame)
   "Set FRAME font if font exists."
-       (select-frame frame)
-       (if (font-exists-p my/font-type)
-           (set-frame-font my/font-type)))
+  (select-frame frame)
+  (if (font-exists-p my/font-type)
+      (set-frame-font my/font-type)))
 (if (daemonp)
-(add-hook 'after-make-frame-functions #'my/set-frame-font))
+    (add-hook 'after-make-frame-functions #'my/set-frame-font))
 
 ;; UTF-8 encoding
 (set-terminal-coding-system 'utf-8)
@@ -109,8 +99,6 @@
   (set (make-local-variable 'fill-nobreak-predicate)
        (lambda () (not (eq (get-text-property (point) 'face)
        'font-lock-comment-face)))))
-
-(set-face-attribute 'default nil :height 120)
 
 ;; Prompt before closing emacs
 (defun ask-before-closing ()
@@ -143,7 +131,7 @@
 (use-package hlinum
   :ensure t
   :init
-  (add-hook 'prog-mode-hook 'hlinum-activate))  
+  (add-hook 'prog-mode-hook 'hlinum-activate))
 
 ;; ein
 ;; ---------------------------------------------------------------------------
