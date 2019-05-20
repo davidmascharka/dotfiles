@@ -232,6 +232,10 @@
 
 (add-hook 'after-save-hook 'magit-after-save-refresh-status t)
 
+(use-package forge
+  :after magit
+  :ensure t)
+
 ;; Company
 ;; ---------------------------------------------------------------------------
 (use-package company
