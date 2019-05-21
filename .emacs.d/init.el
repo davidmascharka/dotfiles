@@ -46,3 +46,5 @@
 ;; Machine-specific settings
 (if (file-exists-p (concat dot-d-dir "private-settings.el"))
     (load (concat dot-d-dir "private-settings.el")))
+
+(setq custom-file (concat dot-d-dir "custom.el"))
