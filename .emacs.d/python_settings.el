@@ -23,3 +23,9 @@
   :no-require t
   :config
   (add-hook 'python-mode-hook 'flycheck-mode))
+
+(use-package company-jedi
+  :after python
+  :no-require t
+  :config
+  (add-to-list 'company-backends 'company-jedi))

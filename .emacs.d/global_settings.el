@@ -142,9 +142,12 @@
 ;; use shackle to force newly-opened notebooks to open in the current buffer instead
 ;; of splitting off into a new window
 ;; https://github.com/millejoh/emacs-ipython-notebook/issues/75#issuecomment-178583636
-(use-package shackle)
-(setq shackle-rules '(("\\`\\*ein: .+?\\.ipynb\\*\\'" :regexp t :same t)))
-(shackle-mode)
+(use-package shackle
+  :ensure t
+  :init
+  (setq shackle-rules '(("\\`\\*ein: .+?\\.ipynb\\*\\'" :regexp t :same t)))
+  (shackle-mode))
+
 
 ;; Ibuffer-vc
 ;; ---------------------------------------------------------------------------
