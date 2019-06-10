@@ -35,7 +35,7 @@ fi
 unclutter -idle 1 &
 
 # don't go fucking blind
-redshift -l 41:-74 &
+redshift -l 37.75:-122.44 &
 
 # start the window manager
 exec i3
