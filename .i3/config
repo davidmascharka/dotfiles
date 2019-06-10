@@ -74,6 +74,8 @@ bindsym $mod+7 workspace 7
 bindsym $mod+8 workspace 8
 bindsym $mod+9 workspace 9
 bindsym $mod+0 workspace 10
+bindsym $mod+i workspace irc
+bindsym $mod+m workspace mail
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace 1
@@ -86,6 +88,8 @@ bindsym $mod+Shift+7 move container to workspace 7
 bindsym $mod+Shift+8 move container to workspace 8
 bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
+bindsym $mod+Shift+i move container to workspace irc
+bindsym $mod+Shift+m move container to workspace mail
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
