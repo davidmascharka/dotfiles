@@ -116,7 +116,7 @@
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 (add-hook 'ibuffer-mode-hook 'ibuffer-auto-mode) ; auto-refresh ibuffer :B1:
 
-(global-set-key (kbd "C-x g") 'goto-line)
+(global-set-key (kbd "C-c g") 'goto-line)
 (global-set-key (kbd "C-c s") 'eshell)
 
 ;; ===========================================================================
@@ -275,5 +275,11 @@
    ("\\.markdown\\'" . markdown-mode))
   :init
   (setq markdown-command "/usr/bin/pandoc"))
+
+;; yasnippet
+;; ---------------------------------------------------------------------------
+(use-package yasnippet
+  :ensure t
+  :init (yas-global-mode))
 
 (provide 'global_settings)

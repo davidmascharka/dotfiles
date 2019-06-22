@@ -36,3 +36,5 @@ alias grep='grep --color'
 
 # easily and nicely open files
 alias open='xdg-open'
+
+export PATH=/home/david/.local/bin:$PATH
