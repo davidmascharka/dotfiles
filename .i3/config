@@ -127,11 +127,11 @@ bar {
         background #000000
         statusline #ffffff
         separator #999999
-    # class			border	bg	text
-    focused_workspace	#00ffff	#285577	#ffffff
-    #active_workspace
-    #inactive_workspace
-    #urgent_workspace
+        # class			border	bg	text
+        focused_workspace	#00ffff	#285577	#ffffff
+        #active_workspace
+        #inactive_workspace
+        #urgent_workspace
     }
 }
 
@@ -150,8 +150,8 @@ bindsym XF86AudioLowerVolume exec amixer -q set Master 2dB- unmute
 bindsym XF86AudioMute exec amixer -q set Master mute
 
 # Make brightness keys work
-bindsym XF86MonBrightnessDown exec xbacklight -dec 5
-bindsym XF86MonBrightnessUp exec xbacklight -inc 5
+bindsym XF86MonBrightnessDown exec adjust-brightness.pl 100
+bindsym XF86MonBrightnessUp exec adjust-brightness.pl -100
 
 # Don't switch between windows just because the mouse moves
 focus_follows_mouse no
