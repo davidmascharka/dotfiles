@@ -18,6 +18,11 @@
 ;; display line number
 (add-hook 'python-mode-hook (lambda () (linum-mode 1)))
 
+;; add blacken to use black for formatting
+(use-package blacken
+  :after python
+  :no-require t)
+
 (use-package flycheck
   :after python
   :no-require t

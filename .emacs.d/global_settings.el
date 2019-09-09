@@ -282,13 +282,5 @@
   :ensure t
   :init (yas-global-mode))
 
-;; blacken
-;; ---------------------------------------------------------------------------
-(use-package blacken
-  :ensure t
-  :bind
-  (("C-c b" . blacken-buffer))
-
-  )
 
 (provide 'global_settings)
