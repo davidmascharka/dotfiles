@@ -12,7 +12,7 @@ PS1='\[$color\][\u@\h \w]\$ \[$reset\]'
 /usr/bin/setxkbmap -option "ctrl:nocaps"
 
 # load private settings (machine-specific)
-[ -z "~/.private-config.sh" ] && source .private-config.sh
+[ -f ~/.private-config.sh ] && source .private-config.sh
 
 export EDITOR='emacs -nw'
 
