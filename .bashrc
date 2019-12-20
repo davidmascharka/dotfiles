@@ -31,6 +31,8 @@ alias lh='ls -lh'
 alias lah='ls -lah'
 alias lha='ls -lah'
 
+alias clera=clear
+
 # get nice colors with grep
 alias grep='grep --color'
 
