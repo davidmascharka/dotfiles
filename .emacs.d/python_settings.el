@@ -34,3 +34,20 @@
   :no-require t
   :config
   (add-to-list 'company-backends 'company-jedi))
+
+(use-package lsp-mode
+  :defer t
+  :commands lsp
+  :custom
+  (lsp-auto-guess-root nil)
+  (lsp-prefer-flymake nil) ; Use flycheck instead of flymake
+  (lsp-file-watch-threshold 2000)
+  (read-process-output-max (* 1024 1024))
+  :bind (:map lsp-mode-map ("C-c C-f" . lsp-format-buffer))
+  :hook (python-mode . lsp))
+
+(use-package lsp-python-ms
+  :after lsp-mode python
+  :if (or *python3* *python*)
+  :custom
+  (lsp-python-executable-cmd "python3"))
