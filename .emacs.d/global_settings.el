@@ -10,22 +10,6 @@
 (scroll-bar-mode -1)
 (blink-cursor-mode -1)
 
-(use-package perl6-mode
-  :ensure t
-  :defer t)
-
-;;; Make numbers pop a bit more
-(use-package highlight-numbers
-  :ensure t
-  :init
-  (add-hook 'prog-mode-hook 'highlight-numbers-mode))
-
-;;; Make nested ((((([[[[{}]]]]))))) look alright
-(use-package rainbow-delimiters
-  :ensure t
-  :init
-  (add-hook 'prog-mode-hook 'rainbow-delimiters-mode))
-
 ;;; Stop the mouse from doing anything
 (dolist (k '([mouse-1] [down-mouse-1] [drag-mouse-1] [double-mouse-1] [triple-mouse-1]
              [mouse-2] [down-mouse-2] [drag-mouse-2] [double-mouse-2] [triple-mouse-2]
@@ -33,6 +17,7 @@
              [mouse-4] [down-mouse-4] [drag-mouse-4] [double-mouse-4] [triple-mouse-4]
              [mouse-5] [down-mouse-5] [drag-mouse-5] [double-mouse-5] [triple-mouse-5]))
   (global-unset-key k))
+
 
 ;; Keep backup(~) files in specified folder
 (setq backup-directory-alist `((".*" . ,emacs-backup-dir)))
@@ -53,8 +38,6 @@
        (if (null (x-list-fonts font))
            nil
          t))
-
-(font-exists-p my/font-type)
 
 ;; Set font for standalone GUI emacs
 (if (display-graphic-p)
@@ -95,6 +78,7 @@
 
 ;; auto-update packages once a week
 (use-package auto-package-update
+  :ensure t
   :if (not (daemonp))
   :custom
   (auto-package-update-interval 7) ;; in days
@@ -137,12 +121,12 @@
 (use-package doom-themes
   :ensure t
   :config
-  (load-theme 'doom-one t))
+  (load-theme 'doom-vibrant t))
 
-(use-package hlinum
-  :ensure t
-  :init
-  (add-hook 'prog-mode-hook 'hlinum-activate))
+;; (load-theme 'doom-bluloco-dark t)
+;; (load-theme 'doom-one t)
+;; (load-theme 'doom-vibrant t)
+
 
 ;; ein
 ;; ---------------------------------------------------------------------------
@@ -230,11 +214,14 @@
       (setq projectile-completion-system 'ivy))
   (setq projectile-indexing-method 'alien))
 
+(use-package counsel
+  :ensure t)
+
 (use-package counsel-projectile
-  :after projectile
+  :after (counsel projectile)
   :ensure t
   :config
-(counsel-projectile-mode))
+  (counsel-projectile-mode))
 
 ;; Magit
 ;; ---------------------------------------------------------------------------
